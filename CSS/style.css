@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root{
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: var(--very-light-gray);
+}
+
+.hero{
+    width: 85%;
+    max-width: 500px;
+    margin: 70px auto;
+    color: var(--very-dark-blue);
+    text-align: center;
+}
+
+.hero__title{
+    font-size: 1.4rem; 
+    font-weight: 200;
+}
+
+.hero__subtitle{
+    margin-bottom: 10px;
+}
+
+.hero__paragraph{
+    color: var(--grayish-blue);
+}
+
+.cards{
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-rows: repeat(4, 230px);
+    grid-template-columns: 310px;
+    gap: 25px;
+    justify-content: center;
+}
+
+.cards__item{
+    background-color: #fff;
+    padding: 25px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 1px 10px 18px hsla(229, 6%, 66%, 0.4);
+}
+
+.cards__title{
+    color: var(--very-dark-blue);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.cards__paragraph{
+    color: var(--grayish-blue);
+    font-size: .9em;
+}
+
+.cards__icon{
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+}
+
+.card1{
+    border-top: 4px solid var(--cyan);
+}
+
+.card2{
+    border-top: 4px solid var(--red);
+}
+
+.card3{
+    border-top: 4px solid var(--orange);
+}
+
+.card4{
+    border-top: 4px solid var(--blue);
+}
+
+@media (min-width: 768px){
+    .hero__title{
+        font-size: 2.1rem;
+    }
+
+    .hero__subtitle{
+        font-size: 2.1rem;
+    }
+
+    .cards{
+        grid-template-rows: repeat(2, 230px);
+        grid-template-columns: repeat(2, 310px);
+    }
+}
+
+@media (min-width: 1200px){
+    .cards{
+        max-width: 1100px;
+        height: 490px;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        ".     .     card2 card2     .      ."
+        "card1 card1 card2 card2 card4 card4"
+        "card1 card1 card3 card3 card4 card4"
+        ".     .     card3 card3     .     .";
+        margin: auto;
+        margin-bottom: 60px;
+    }
+
+
+    .card1{
+        grid-area: card1;
+    }
+
+    .card2{
+        grid-area: card2;
+    }
+
+    .card3{
+        grid-area: card3;
+    }
+
+    .card4{
+        grid-area: card4;
+    }
+}
